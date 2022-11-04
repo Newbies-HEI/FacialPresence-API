@@ -24,6 +24,7 @@ public class UserMapper {
     restStudent.setBirthDate(user.getBirthDate());
     restStudent.setSex(Student.SexEnum.fromValue(user.getSex().toString()));
     restStudent.setAddress(user.getAddress());
+    restStudent.setRefImage(user.getRefImage());
 
     return restStudent;
   }
@@ -42,6 +43,7 @@ public class UserMapper {
     teacher.setBirthDate(user.getBirthDate());
     teacher.setSex(Teacher.SexEnum.fromValue(user.getSex().toString()));
     teacher.setAddress(user.getAddress());
+    teacher.setRefImage(user.getRefImage());
 
     return teacher;
   }
@@ -60,6 +62,7 @@ public class UserMapper {
     manager.setBirthDate(user.getBirthDate());
     manager.setSex(Manager.SexEnum.fromValue(user.getSex().toString()));
     manager.setAddress(user.getAddress());
+    manager.setRefImage(user.getRefImage());
 
     return manager;
   }
@@ -78,7 +81,8 @@ public class UserMapper {
         .birthDate(teacher.getBirthDate())
         .sex(User.Sex.valueOf(teacher.getSex().toString()))
         .address(teacher.getAddress())
-        .build();
+        .refImage(teacher.getRefImage())
+            .build();
   }
 
   public User toDomain(Student student) {
@@ -95,6 +99,7 @@ public class UserMapper {
         .birthDate(student.getBirthDate())
         .sex(User.Sex.valueOf(student.getSex().toString()))
         .address(student.getAddress())
+            .refImage(student.getRefImage())
         .build();
   }
 }
